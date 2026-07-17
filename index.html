@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2048 Color Edition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- SCREEN 1: Start Button Welcome View -->
+    <div id="start-screen" class="screen">
+        <div id="play-button">▶</div>
+    </div>
+
+    <!-- SCREEN 2: Color Palette Selection Grid View -->
+    <div id="color-screen" class="screen" style="display: none;">
+        <h1 class="title-text">Choose a Color:</h1>
+        <div id="color-grid"></div>
+    </div>
+
+    <!-- SCREEN 3: Main Game Board Layout View -->
+    <div id="game-screen" class="screen" style="display: none;">
+        <div id="game-board"></div>
+    </div>
+
+    <!-- SCREEN 4: Win Overlay Layout View -->
+    <div id="win-screen" class="screen" style="display: none;">
+        <h1 class="win-text">You Win!</h1>
+        <div class="menu-options">
+            <div class="menu-item" id="btn-view">View Board</div>
+            <div class="menu-item" id="btn-again">Play Again</div>
+            <div class="menu-item" id="btn-quit">Quit</div>
+        </div>
+    </div>
+
+    <!-- SCREEN 5: Lose Overlay Layout View -->
+    <div id="lose-screen" class="screen" style="display: none;">
+        <h1 class="lose-text">You Lose!</h1>
+        <div class="menu-options">
+            <div class="menu-item" id="btn-lose-view">View Board</div>
+            <div class="menu-item" id="btn-lose-again">Play Again</div>
+            <div class="menu-item" id="btn-lose-quit">Quit</div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
