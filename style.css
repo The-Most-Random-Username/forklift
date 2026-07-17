@@ -1,0 +1,114 @@
+/* Sets up your 450x450 window footprint */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Arial", sans-serif;
+    user-select: none;
+}
+
+/* Replaces your main Tkinter root/canvas dimensions */
+.screen {
+    width: 450px;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* VIEW 1: Your start_game() oval play button coordinates */
+#start-screen {
+    background-color: white;
+}
+#play-button {
+    position: absolute;
+    left: 175px;
+    top: 175px;
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    text-indent: 8px;
+}
+
+/* VIEW 2: Your choose_color() black grid properties */
+#color-screen {
+    background-color: black;
+}
+.title-text {
+    position: absolute;
+    width: 450px;
+    text-align: center;
+    top: 20px;
+    margin: 0;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+.color-box {
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    cursor: pointer;
+}
+
+/* VIEW 3: Your gray empty game board background blocks */
+#game-screen {
+    background-color: #FFFDF0;
+}
+.grid-bg-square {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-color: gray;
+}
+
+/* Your custom adding_new_square and put_blocks active tiles */
+.tile {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "Arial", sans-serif;
+}
+
+/* VIEW 4 & 5: Your Win/Lose Screen text menus */
+#win-screen { background-color: green; }
+#lose-screen { background-color: blue; }
+
+.win-text, .lose-text {
+    position: absolute;
+    width: 450px;
+    text-align: center;
+    top: 145px;
+    margin: 0;
+    color: #8fcda8;
+    font-size: 45px;
+    font-weight: bold;
+}
+.menu-options {
+    position: absolute;
+    top: 215px;
+    width: 450px;
+    text-align: center;
+}
+.menu-item {
+    font-size: 32px;
+    font-family: "Liberation Sans", sans-serif;
+    color: #4FA6E9;
+    margin: 15px 0;
+    cursor: pointer;
+}
