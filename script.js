@@ -83,8 +83,13 @@ function setup_game_board() {
     put_blocks();
     window.addEventListener('keydown', handle_keydown);
     
-    // --- ADD THIS NEW LINE RIGHT HERE TO HOOK UP THE RESTART EVENT ---
-    document.getElementById('btn-ingame-restart').onclick = () => reset_to_color_selection();
+    // --- FIXED CLICK EVENT: Safer execution wrapper ---
+    const restartBtn = document.getElementById('btn-ingame-restart');
+    if (restartBtn) {
+        restartBtn.onclick = function() {
+            reset_to_color_selection();
+        };
+    }
 }
 
     
@@ -191,10 +196,12 @@ function draw_menu() {
 
 
 function reset_to_color_selection() {
+    // This safely wipes your board array data back to the starting layout
     value_list = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0);
     showScreen('color-screen');
     choose_color();
 }
+
 
 // --- KEY DOWN EVENT SWITCHBOARD ---
 function handle_keydown(event) {
