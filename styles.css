@@ -1,4 +1,4 @@
-/* Sets up your 450x450 window footprint */
+/* Sets up your background viewport to cover 100% of the display monitor screen */
 body {
     margin: 0;
     padding: 0;
@@ -6,18 +6,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     font-family: "Arial", sans-serif;
     user-select: none;
+    box-sizing: border-box;
 }
 
-/* Replaces your main Tkinter root/canvas dimensions */
+/* EDIT HERE: Changes from a rigid 450px box to a fluid, fully responsive layout canvas */
 .screen {
-    width: 450px;
-    height: 450px;
+    width: 100vw;
+    height: 100vh;
+    max-width: 500px;  /* Keeps the game looking proportional on giant computer screens */
+    max-height: 500px;
     position: relative;
     overflow: hidden;
+    margin: auto;
 }
+
 
 /* VIEW 1: Your start_game() oval play button coordinates */
 #start-screen {
