@@ -91,8 +91,6 @@ function setup_game_board() {
             reset_to_color_selection();
         };
     }
-
-    const boardElement = document.getElementById('game-screen');
     
     const boardElement = document.getElementById('game-screen');
     
