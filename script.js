@@ -81,13 +81,9 @@ function setup_game_board() {
     });
     
     put_blocks();
+    
+    // Your existing keyboard listener:
     window.addEventListener('keydown', handle_keydown);
-    
-    // --- ADD THIS NEW LINE RIGHT HERE TO HOOK UP THE RESTART EVENT ---
-    document.getElementById('btn-ingame-restart').onclick = () => reset_to_color_selection();
-}
-
-    
     
     // --- ADD THESE NEW MOBILE TOUCH LISTENERS HERE ---
     const boardElement = document.getElementById('game-screen');
