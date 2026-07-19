@@ -12,16 +12,16 @@ body {
     box-sizing: border-box;
 }
 
-/* Changes from a rigid 450px box to a fluid, fully responsive layout canvas */
 .screen {
     width: 100vw;
     height: 100vh;
-    max-width: 500px;  /* Keeps the game looking proportional on giant computer screens */
-    max-height: 500px;
+    max-width: 450px;  
+    max-height: 480px; /* Increased from 450px to fit the restart link text */
     position: relative;
     overflow: hidden;
     margin: auto;
 }
+
 
 
 
