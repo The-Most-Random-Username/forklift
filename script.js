@@ -106,7 +106,7 @@ function setup_game_board() {
     boardElement.addEventListener('touchend', function(e) {
         end_swipe(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
     });
-}
+
 
 
 // --- BLOCK GENERATION LAYER ---
