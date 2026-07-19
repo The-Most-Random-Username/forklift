@@ -81,18 +81,9 @@ function setup_game_board() {
     });
     
     put_blocks();
+    
+    // Your existing keyboard listener:
     window.addEventListener('keydown', handle_keydown);
-    
-    // --- FIXED CLICK EVENT: Safer execution wrapper ---
-    const restartBtn = document.getElementById('btn-ingame-restart');
-    if (restartBtn) {
-        restartBtn.onclick = function() {
-            reset_to_color_selection();
-        };
-    }
-}
-
-    
     
     // --- ADD THESE NEW MOBILE TOUCH LISTENERS HERE ---
     const boardElement = document.getElementById('game-screen');
@@ -106,7 +97,7 @@ function setup_game_board() {
     boardElement.addEventListener('touchend', function(e) {
         end_swipe(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
     });
-
+}
 
 
 // --- BLOCK GENERATION LAYER ---
@@ -196,12 +187,10 @@ function draw_menu() {
 
 
 function reset_to_color_selection() {
-    // This safely wipes your board array data back to the starting layout
     value_list = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0);
     showScreen('color-screen');
     choose_color();
 }
-
 
 // --- KEY DOWN EVENT SWITCHBOARD ---
 function handle_keydown(event) {
