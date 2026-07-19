@@ -68,7 +68,6 @@ function choose_color() {
 }
 
 function setup_game_board() {
-    
     showScreen('game-screen');
     const board = document.getElementById('game-board');
     board.innerHTML = "";
@@ -84,27 +83,9 @@ function setup_game_board() {
     put_blocks();
     window.addEventListener('keydown', handle_keydown);
     
-    // --- FIXED CLICK EVENT: Safer execution wrapper ---
-    const restartBtn = document.getElementById('btn-ingame-restart');
-    if (restartBtn) {
-        restartBtn.onclick = function() {
-            reset_to_color_selection();
-        };
-    }
-
-    const boardElement = document.getElementById('game-screen');
-    
-    boardElement.addEventListener('touchstart', function(e) {
-        e.preventDefault(); 
-        start_swipe(e.touches[0].clientX, e.touches[0].clientY);
-    });
-    
-    boardElement.addEventListener('touchend', function(e) {
-        e.preventDefault(); 
-        end_swipe(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
-    });
+    // --- ADD THIS NEW LINE RIGHT HERE TO HOOK UP THE RESTART EVENT ---
+    document.getElementById('btn-ingame-restart').onclick = () => reset_to_color_selection();
 }
-
 
     
     
@@ -120,7 +101,7 @@ function setup_game_board() {
     boardElement.addEventListener('touchend', function(e) {
         end_swipe(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
     });
-
+}
 
 
 // --- BLOCK GENERATION LAYER ---
@@ -160,7 +141,7 @@ function adding_new_square() {
         } else {
             value_list[new_square_position] = 2;
         }
-        setTimeout(put_blocks(), 250);
+        put_blocks();
     }
     
     let snowball = false;
@@ -210,12 +191,10 @@ function draw_menu() {
 
 
 function reset_to_color_selection() {
-    // This safely wipes your board array data back to the starting layout
     value_list = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0);
     showScreen('color-screen');
     choose_color();
 }
-
 
 // --- KEY DOWN EVENT SWITCHBOARD ---
 function handle_keydown(event) {
@@ -348,10 +327,9 @@ function move_squares(keysym) {
         }
     }
     
-    put_blocks();           
+        put_blocks();           
     if (randomnesss === true) {
-        //setTimeout(adding_new_square, 250);
-        adding_new_square()
+        setTimeout(adding_new_square, 250);
         let current_highest = check_highest_number();
         if (current_highest === 2048) {
             setTimeout(you_win, 251);
