@@ -1,4 +1,4 @@
-/* Sets up your background viewport to cover 100% of the display monitor screen */
+/* Sets up your 450x450 window footprint */
 body {
     margin: 0;
     padding: 0;
@@ -6,24 +6,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     font-family: "Arial", sans-serif;
     user-select: none;
-    box-sizing: border-box;
 }
 
+/* Replaces your main Tkinter root/canvas dimensions */
 .screen {
-    width: 100vw;
-    height: 100vh;
-    max-width: 450px;  
-    max-height: 480px; /* Increased from 450px to fit the restart link text */
+    width: 450px;
+    height: 450px;
     position: relative;
     overflow: hidden;
-    margin: auto;
 }
-
-
-
 
 /* VIEW 1: Your start_game() oval play button coordinates */
 #start-screen {
