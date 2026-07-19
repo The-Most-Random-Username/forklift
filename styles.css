@@ -70,6 +70,9 @@ body {
 /* VIEW 3: Your gray empty game board background blocks */
 #game-screen {
     background-color: #FFFDF0;
+    touch-action: none;
+}
+
 }
 .grid-bg-square {
     position: absolute;
