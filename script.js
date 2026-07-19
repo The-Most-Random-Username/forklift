@@ -91,20 +91,20 @@ function setup_game_board() {
             reset_to_color_selection();
         };
     }
-    
+
     const boardElement = document.getElementById('game-screen');
     
     boardElement.addEventListener('touchstart', function(e) {
         e.preventDefault(); 
         start_swipe(e.touches[0].clientX, e.touches[0].clientY);
-    }, { passive: false }); // 🌟 ADD THIS SETTING HERE
+    });
     
     boardElement.addEventListener('touchend', function(e) {
         e.preventDefault(); 
         end_swipe(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
-    }, { passive: false }); // 🌟 ADD THIS SETTING HERE
-
+    });
 }
+
 
     
     
@@ -160,7 +160,7 @@ function adding_new_square() {
         } else {
             value_list[new_square_position] = 2;
         }
-        put_blocks()
+        setTimeout(put_blocks(), 250);
     }
     
     let snowball = false;
@@ -350,7 +350,8 @@ function move_squares(keysym) {
     
     put_blocks();           
     if (randomnesss === true) {
-        setTimeout(adding_new_square, 250);
+        //setTimeout(adding_new_square, 250);
+        adding_new_square()
         let current_highest = check_highest_number();
         if (current_highest === 2048) {
             setTimeout(you_win, 251);
