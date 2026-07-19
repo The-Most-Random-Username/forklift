@@ -13,8 +13,8 @@ body {
 
 /* Replaces your main Tkinter root/canvas dimensions */
 .screen {
-    width: 100%;
-    height: 100%;
+    width: 450px;
+    height: 450px;
     position: relative;
     overflow: hidden;
 }
