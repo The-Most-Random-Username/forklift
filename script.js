@@ -68,6 +68,7 @@ function choose_color() {
 }
 
 function setup_game_board() {
+    
     showScreen('game-screen');
     const board = document.getElementById('game-board');
     board.innerHTML = "";
@@ -90,7 +91,20 @@ function setup_game_board() {
             reset_to_color_selection();
         };
     }
+
+    const boardElement = document.getElementById('game-screen');
+    
+    boardElement.addEventListener('touchstart', function(e) {
+        e.preventDefault(); 
+        start_swipe(e.touches[0].clientX, e.touches[0].clientY);
+    });
+    
+    boardElement.addEventListener('touchend', function(e) {
+        e.preventDefault(); 
+        end_swipe(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+    });
 }
+
 
     
     
