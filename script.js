@@ -174,7 +174,7 @@ function you_win() {
 // --- WIN/LOSE OPTION MENUS ---
 function draw_menu() {
     // 1. Connects the choices on the WIN screen
-    document.getElementById('btn-view').onclick = () => { showScreen('game-screen'); put_blocks(); };
+    document.getElementById('btn-view').onclick = () => { showScreen('game-screen'); put_blocks(); window.addEventListener('keydown', handle_keydown); };
     document.getElementById('btn-again').onclick = () => reset_to_color_selection();
     document.getElementById('btn-quit').onclick = () => trigger_quit_shutdown();
     
