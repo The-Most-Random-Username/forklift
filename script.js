@@ -90,6 +90,7 @@ function get_win(){
 
 // --- VIEW 2: CHOOSE COLOR ---
 function choose_color() {
+    already_won = false;
     const grid = document.getElementById('color-grid');
     grid.innerHTML = "";
     
