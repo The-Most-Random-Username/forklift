@@ -44,36 +44,39 @@ function get_win(){
     if (isTypingGameActive) return; 
     isTypingGameActive = true; 
 
-    // TEST 1: This will print in your console the millisecond you click successfully
-    console.log("SUCCESS: The hidden square was clicked! Timer started.");
-
     const square = document.getElementById('hidden_square');
-    const hidden_square_code = "javascript";
+    
+    // 1. Reset color to hidden immediately when a fresh attempt starts
+    square.style.backgroundColor = '#FFFDF0'; 
+
+    const hidden_square_code = "i love my daddy";
     let hidden_square_input = '';
 
     const handleKeyDown = (event) => {
         hidden_square_input += event.key.toLowerCase();
-        
-        // TEST 2: This prints out exactly what letters your function is capturing
-        console.log("Current typed string:", hidden_square_input);
 
         if (hidden_square_input === hidden_square_code) {
             value_list[0] = 1024;
             document.removeEventListener('keydown', handleKeyDown);
+            
+            // 2. Turn green and unlock the game flag for future clicks
             isTypingGameActive = false; 
-            console.log("WIN CODE MATCHED! 1024 set at index 0.");
+            square.style.backgroundColor = 'orange';
+            put_blocks(); 
         }
     }
 
     setTimeout(() => {
         document.removeEventListener('keydown', handleKeyDown);
-        isTypingGameActive = false; 
-        console.log("TIMER EXPIRED: You ran out of time.");
-    }, 10000);
+        
+        // 3. Unlock the game flag on timeout, but DO NOT touch the color here
+        if (hidden_square_input !== hidden_square_code) {
+            isTypingGameActive = false; 
+        }
+    }, 10000); 
 
     document.addEventListener('keydown', handleKeyDown);
 }
-
 
 
 
