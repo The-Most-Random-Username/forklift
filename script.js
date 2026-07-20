@@ -40,7 +40,11 @@ function start_game() {
     choose_color();
 }
 function get_win(){
+    // 1. Grab the square element
+    const square = document.getElementById('hidden_square');
     
+    // 2. Change the color immediately upon click (e.g., changing red to yellow)
+    square.style.backgroundColor = 'yellow'; 
     // 1. Move variables to the top so the function can see them
     const hidden_square_code = "javascript";
     let hidden_square_input = '';
