@@ -43,7 +43,7 @@ function start_game() {
 function get_win(){
     if (isTypingGameActive) return; 
     isTypingGameActive = true; 
-
+    console.log("SUCCESS: The hidden square was clicked! 10-second timer started.");
     const square = document.getElementById('hidden_square');
     
     // Reset color to hidden immediately when a fresh attempt starts
