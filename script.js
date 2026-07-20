@@ -4,7 +4,7 @@ let start_y = 0;
 let swipe_direction = 0;
 let value_list = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0);
 let spot_click = 0;
-
+let isTypingGameActive = false; // Add this with your other globals
 const position_list = [
     {x: 10, y: 10},  {x: 10, y: 120},  {x: 10, y: 230},  {x: 10, y: 340},
     {x: 120, y: 10}, {x: 120, y: 120}, {x: 120, y: 230}, {x: 120, y: 340},
@@ -40,35 +40,39 @@ function start_game() {
     choose_color();
 }
 function get_win(){
-    // 1. Grab the square element
-    const square = document.getElementById('hidden_square');
+    // 1. If the game is already running, EXIT immediately. Prevent double clicks!
+    if (isTypingGameActive) return; 
     
-    // 2. Change the color immediately upon click (e.g., changing red to yellow)
-    square.style.backgroundColor = 'yellow'; 
-    // 1. Move variables to the top so the function can see them
-    const hidden_square_code = "javascript";
+    // 2. Set the switch to true since the challenge has officially started
+    isTypingGameActive = true; 
+
+    const hidden_square_code = "i love my daddy";
     let hidden_square_input = '';
 
-    // 2. Combine all logic into a single named listener
     const handleKeyDown = (event) => {
         hidden_square_input += event.key.toLowerCase();
 
-        // Check if the current input matches our target string
         if (hidden_square_input === hidden_square_code) {
             value_list[0] = 1024;
-            // Optional: Remove the listener immediately since they won
             document.removeEventListener('keydown', handleKeyDown);
+            
+            // 3. Reset the switch on success so they can click it again later
+            isTypingGameActive = false; 
+            square.style.backgroundColor = 'green';
         }
     }
 
-    // Start the 2-second countdown immediately when get_win runs
     setTimeout(() => {
         document.removeEventListener('keydown', handleKeyDown);
-    }, 10000);
+        
+        // 4. Reset the switch on failure/timeout so they can retry!
+        isTypingGameActive = false; 
+        square.style.backgroundColor = '#FFFDF0'; // Resets back to your board color
+    }, 10000); // 10 seconds to type
 
-    // Attach the single listener right after starting the timer
     document.addEventListener('keydown', handleKeyDown);
 }
+
 
 
 
