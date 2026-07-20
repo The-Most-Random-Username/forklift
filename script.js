@@ -223,7 +223,7 @@ function you_win() {
 // --- WIN/LOSE OPTION MENUS ---
 function draw_menu() {
     // 1. Connects the choices on the WIN screen
-    document.getElementById('btn-view').onclick = () => { showScreen('game-screen'); put_blocks(); window.addEventListener('keydown', handle_keydown); already_won = true; };
+    document.getElementById('btn-view').onclick = () => { showScreen('game-screen'); put_blocks(); window.addEventListener('keydown', handle_keydown);};
     document.getElementById('btn-again').onclick = () => reset_to_color_selection();
     document.getElementById('btn-quit').onclick = () => trigger_quit_shutdown();
     
@@ -378,6 +378,7 @@ function move_squares(keysym) {
         let current_highest = check_highest_number();
         if (current_highest === 2048 && already_won === false) {
             setTimeout(you_win, 101);
+            already_won = true;
         }
     }
     
