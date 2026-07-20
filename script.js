@@ -49,7 +49,7 @@ function get_win(){
     // 1. Reset color to hidden immediately when a fresh attempt starts
     square.style.backgroundColor = '#FFFDF0'; 
 
-    const hidden_square_code = "i love my daddy";
+    const hidden_square_code = "i-love-my-daddy";
     let hidden_square_input = '';
 
     const handleKeyDown = (event) => {
