@@ -100,6 +100,7 @@ function choose_color() {
 }
 
 function setup_game_board() {
+    document.getElementById('hidden_square').addEventListener('click', get_win)
     showScreen('game-screen');
     const board = document.getElementById('game-board');
     board.innerHTML = "";
@@ -110,7 +111,6 @@ function setup_game_board() {
         bgSquare.style.left = pos.x + 'px';
         bgSquare.style.top = pos.y + 'px';
         board.appendChild(bgSquare);
-    document.getElementById('hidden_square').addEventListener('click', get_win)
     });
     
     put_blocks();
