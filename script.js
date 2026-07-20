@@ -39,42 +39,40 @@ function start_game() {
     showScreen('color-screen');
     choose_color();
 }
+
 function get_win(){
-    // 1. If the game is already running, EXIT immediately. Prevent double clicks!
     if (isTypingGameActive) return; 
-    
-    // 2. Set the switch to true since the challenge has officially started
     isTypingGameActive = true; 
 
-    // --- FIX: ADD THIS LINE HERE ---
-    const square = document.getElementById('hidden_square');
+    // TEST 1: This will print in your console the millisecond you click successfully
+    console.log("SUCCESS: The hidden square was clicked! Timer started.");
 
-    const hidden_square_code = "i love my daddy";
+    const square = document.getElementById('hidden_square');
+    const hidden_square_code = "javascript";
     let hidden_square_input = '';
 
     const handleKeyDown = (event) => {
         hidden_square_input += event.key.toLowerCase();
+        
+        // TEST 2: This prints out exactly what letters your function is capturing
+        console.log("Current typed string:", hidden_square_input);
 
         if (hidden_square_input === hidden_square_code) {
             value_list[0] = 1024;
             document.removeEventListener('keydown', handleKeyDown);
-            
-            // 3. Reset the switch on success so they can click it again later
             isTypingGameActive = false; 
-            square.style.backgroundColor = 'green';
+            console.log("WIN CODE MATCHED! 1024 set at index 0.");
         }
     }
 
     setTimeout(() => {
         document.removeEventListener('keydown', handleKeyDown);
-        
-        // 4. Reset the switch on failure/timeout so they can retry!
         isTypingGameActive = false; 
-    }, 10000); // 10 seconds to type
+        console.log("TIMER EXPIRED: You ran out of time.");
+    }, 10000);
 
     document.addEventListener('keydown', handleKeyDown);
 }
-
 
 
 
