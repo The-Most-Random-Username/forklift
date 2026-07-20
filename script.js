@@ -46,6 +46,9 @@ function get_win(){
     // 2. Set the switch to true since the challenge has officially started
     isTypingGameActive = true; 
 
+    // --- FIX: ADD THIS LINE HERE ---
+    const square = document.getElementById('hidden_square');
+
     const hidden_square_code = "i love my daddy";
     let hidden_square_input = '';
 
@@ -67,11 +70,11 @@ function get_win(){
         
         // 4. Reset the switch on failure/timeout so they can retry!
         isTypingGameActive = false; 
-        square.style.backgroundColor = '#FFFDF0'; // Resets back to your board color
     }, 10000); // 10 seconds to type
 
     document.addEventListener('keydown', handleKeyDown);
 }
+
 
 
 
