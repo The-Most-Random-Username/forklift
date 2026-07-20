@@ -39,6 +39,34 @@ function start_game() {
     showScreen('color-screen');
     choose_color();
 }
+function get_win(){
+    
+    // 1. Move variables to the top so the function can see them
+    const hidden_square_code = "javascript";
+    let hidden_square_input = '';
+
+    // 2. Combine all logic into a single named listener
+    const handleKeyDown = (event) => {
+        hidden_square_input += event.key.toLowerCase();
+
+        // Check if the current input matches our target string
+        if (hidden_square_input === hidden_square_code) {
+            value_list[0] = 1024;
+            // Optional: Remove the listener immediately since they won
+            document.removeEventListener('keydown', handleKeyDown);
+        }
+    }
+
+    // Start the 2-second countdown immediately when get_win runs
+    setTimeout(() => {
+        document.removeEventListener('keydown', handleKeyDown);
+    }, 10000);
+
+    // Attach the single listener right after starting the timer
+    document.addEventListener('keydown', handleKeyDown);
+}
+
+
 
 // --- VIEW 2: CHOOSE COLOR ---
 function choose_color() {
@@ -78,6 +106,7 @@ function setup_game_board() {
         bgSquare.style.left = pos.x + 'px';
         bgSquare.style.top = pos.y + 'px';
         board.appendChild(bgSquare);
+    document.getElementById('hidden_square').addEventListener('click', get_win)
     });
     
     put_blocks();
