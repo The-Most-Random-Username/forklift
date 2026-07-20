@@ -64,7 +64,21 @@ body {
 /* VIEW 3: Your gray empty game board background blocks */
 #game-screen {
     background-color: #FFFDF0;
+    position:relative;
 }
+
+#hidden_square {
+  position: absolute;  
+  top: 220px;          
+  left: 220px;         
+  
+  width: 10px;  
+  height: 10px;        
+  background-color: #FFFDF0;
+  
+
+}
+
 .grid-bg-square {
     position: absolute;
     width: 90px;
