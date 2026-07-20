@@ -65,9 +65,8 @@ function get_win(){
             document.removeEventListener('keydown', handleKeyDown);
             
             isTypingGameActive = false; 
-            square.style.backgroundColor = 'orange';
-
-            put_blocks(); 
+            square.style.backgroundColor = "#FEFCEF";
+ 
         }
     }
 
