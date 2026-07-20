@@ -44,15 +44,12 @@ function get_win(){
     if (isTypingGameActive) return; 
     isTypingGameActive = true; 
 
-    // Console Check: Verifies the click registered and the 10-second window started
-    console.log("SUCCESS: The hidden square was clicked! 10-second timer started.");
-
     const square = document.getElementById('hidden_square');
     
     // Reset color to hidden immediately when a fresh attempt starts
     square.style.backgroundColor = '#FFFDF0'; 
 
-    const hidden_square_code = "javascript j";
+    const hidden_square_code = "i love my daddy";
     let hidden_square_input = '';
 
     const handleKeyDown = (event) => {
@@ -63,18 +60,13 @@ function get_win(){
 
         hidden_square_input += event.key.toLowerCase();
 
-        // Console Check: Displays exactly what characters are accumulating in real-time
-        console.log("Current typed string:", hidden_square_input);
-
         if (hidden_square_input === hidden_square_code) {
-            value_list = 1024;
+            value_list[0] = 1024;
             document.removeEventListener('keydown', handleKeyDown);
             
             isTypingGameActive = false; 
             square.style.backgroundColor = 'orange';
-            
-            // Console Check: Confirms the match was successful
-            console.log("WIN CODE MATCHED! 'orange' color locked on square.");
+
             put_blocks(); 
         }
     }
@@ -84,8 +76,7 @@ function get_win(){
         
         if (hidden_square_input !== hidden_square_code) {
             isTypingGameActive = false; 
-            // Console Check: Notifies you that the typing window closed on failure
-            console.log("TIMER EXPIRED: Challenge window closed before matching code.");
+
         }
     }, 10000); 
 
