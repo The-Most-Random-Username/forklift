@@ -1,6 +1,9 @@
+
+
 // --- INITIAL STATE DATA LOOPS ---
 let start_x = 0;
 let start_y = 0;
+let already_won = false;
 let swipe_direction = 0;
 let value_list = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0);
 let spot_click = 0;
@@ -220,7 +223,7 @@ function you_win() {
 // --- WIN/LOSE OPTION MENUS ---
 function draw_menu() {
     // 1. Connects the choices on the WIN screen
-    document.getElementById('btn-view').onclick = () => { showScreen('game-screen'); put_blocks(); window.addEventListener('keydown', handle_keydown); };
+    document.getElementById('btn-view').onclick = () => { showScreen('game-screen'); put_blocks(); window.addEventListener('keydown', handle_keydown); already_won = true; };
     document.getElementById('btn-again').onclick = () => reset_to_color_selection();
     document.getElementById('btn-quit').onclick = () => trigger_quit_shutdown();
     
@@ -371,10 +374,10 @@ function move_squares(keysym) {
     
         put_blocks();           
     if (randomnesss === true) {
-        setTimeout(adding_new_square, 250);
+        setTimeout(adding_new_square, 100);
         let current_highest = check_highest_number();
-        if (current_highest === 2048) {
-            setTimeout(you_win, 251);
+        if (current_highest === 2048 && already_won === false) {
+            setTimeout(you_win, 101);
         }
     }
     
