@@ -73,9 +73,9 @@ body {
   left: 210px;         
   width: 19px;  
   height: 19px;        
-  background-color: #FFFEEA;
+  background-color: #FFFDF3;
   z-index: 10; 
-
+  border-color: #FFFEEA; 
 }
 
 .grid-bg-square {
