@@ -63,9 +63,8 @@ function get_win(){
         if (hidden_square_input === hidden_square_code) {
             value_list[0] = 1024;
             document.removeEventListener('keydown', handleKeyDown);
-            
+            document.body.style.backgroundColor = "lightblue";
             isTypingGameActive = false; 
-            square.style.backgroundColor = "#FFFEEA";
  
         }
     }
