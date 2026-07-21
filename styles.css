@@ -74,7 +74,7 @@ body {
   width: 19px;  
   height: 19px;        
   background-color: #FFFDF3;
-  z-index: 10; 
+  z-index: 5; 
   border-color: #FFFEEA; 
 }
 
@@ -96,6 +96,7 @@ body {
     font-size: 32px;
     font-weight: bold;
     font-family: "Arial", sans-serif;
+    z-index: 6;
 }
 
 /* VIEW 4 & 5: Your Win/Lose Screen text menus */
