@@ -48,9 +48,6 @@ function get_win(){
     isTypingGameActive = true; 
     console.log("SUCCESS: The hidden square was clicked! 10-second timer started.");
     const square = document.getElementById('hidden_square');
-    
-    // Reset color to hidden immediately when a fresh attempt starts
-    square.style.backgroundColor = '#FFFDF0'; 
 
     const hidden_square_code = "i love my daddy";
     let hidden_square_input = '';
@@ -68,7 +65,7 @@ function get_win(){
             document.removeEventListener('keydown', handleKeyDown);
             
             isTypingGameActive = false; 
-            square.style.backgroundColor = "#FEFCEF";
+            square.style.backgroundColor = "#FFFEEA";
  
         }
     }
