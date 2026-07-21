@@ -71,10 +71,10 @@ body {
   position: absolute;  
   top: 210px;          
   left: 210px;         
-  
-  width: 20px;  
-  height: 20px;        
-  background-color: #FFFDF0;
+  background-color: orange; 
+  width: 19px;  
+  height: 19px;        
+  /*background-color: #FFFDF0;*/
   z-index: 10; 
 
 }
