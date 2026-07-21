@@ -69,10 +69,10 @@ body {
 
 #hidden_square {
   position: absolute;  
-  top: 210px;          
-  left: 210px;         
-  width: 19px;  
-  height: 19px;        
+  top: 212px;          
+  left: 212px;         
+  width: 18px;  
+  height: 18px;        
   background-color: #FFFDF3;
   z-index: 5; 
   border-color: #FFFEEA; 
