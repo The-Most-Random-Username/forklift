@@ -296,10 +296,10 @@ function move_squares(keysym) {
                     value_list[destination] = value_list[i];
                     value_list[i] = 0;
                     randomnesss = true;
-            }
+                }
                 else {
                     console.log("NOTHING");
-            }
+                }
 
         }
     }
@@ -334,7 +334,7 @@ function move_squares(keysym) {
                     value_list[destination] = value_list[i];
                     value_list[i] = 0;
                     randomnesss = true;
-            }
+                }
         }
     }
     
@@ -368,7 +368,7 @@ function move_squares(keysym) {
                     value_list[destination] = value_list[i];
                     value_list[i] = 0;
                     randomnesss = true;
-            }
+                }
         }
     }
     
@@ -402,7 +402,7 @@ function move_squares(keysym) {
                     value_list[destination] = value_list[i];
                     value_list[i] = 0;
                     randomnesss = true;
-            }
+                }
         }
     }
     
