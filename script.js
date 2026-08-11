@@ -293,7 +293,9 @@ function move_squares(keysym) {
                 else if (
                     destination !== i &&
                     value_list[i] === value_list[destination] &&
-                    merged_squares[destination] 
+                    merged_squares[destination] &&
+                    destination - 1 >= 0 &&
+                    value_list[destination - 1] === 0
                 ) {
                     destination = destination - 1;   // For Left
                     value_list[destination] = value_list[i];
@@ -332,7 +334,9 @@ function move_squares(keysym) {
                 else if (
                     destination !== i &&
                     value_list[i] === value_list[destination] &&
-                    merged_squares[destination]
+                    merged_squares[destination] &&
+                    destination + 1 < 16 &&
+                    value_list[destination + 1] === 0
                 ) {
                     destination = destination + 1;   // For Left
 
@@ -372,7 +376,9 @@ function move_squares(keysym) {
                 else if (
                     destination !== i &&
                     value_list[i] === value_list[destination] &&
-                    merged_squares[destination]
+                    merged_squares[destination] &&
+                    destination - 4 >= 0 &&
+                    value_list[destination - 4] === 0
                 ) {
                     destination = destination - 4;   // For Left
 
@@ -419,7 +425,9 @@ function move_squares(keysym) {
                 else if (
                     destination !== i &&
                     value_list[i] === value_list[destination] &&
-                    merged_squares[destination]
+                    merged_squares[destination] &&
+                    destination + 4 < 16 &&
+                    value_list[destination + 4] === 0 
                 ) {
                     destination = destination + 4;   // For Left
 
