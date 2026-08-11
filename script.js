@@ -5,7 +5,7 @@ let start_x = 0;
 let start_y = 0;
 let already_won = false;
 let swipe_direction = 0;
-let value_list = Array(2, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 8, 0, 0, 0);
+let value_list = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0);
 let spot_click = 0;
 let isTypingGameActive = false; // Add this with your other globals
 const position_list = [
@@ -281,6 +281,12 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
+                // new stuff to try to fix problem
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                    destination = destination - 1
+                    value_list[destination] = value_list[i];
+                    value_list[i] = 0;
+                    randomnesss = true;
             }
         }
     }
@@ -309,6 +315,12 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
+                // new stuff to try to fix problem
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                    destination = destination + 1
+                    value_list[destination] = value_list[i];
+                    value_list[i] = 0;
+                    randomnesss = true;
             }
         }
     }
@@ -337,6 +349,12 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
+                // new stuff to try to fix problem
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                    destination = destination - 4
+                    value_list[destination] = value_list[i];
+                    value_list[i] = 0;
+                    randomnesss = true;
             }
         }
     }
@@ -352,13 +370,6 @@ function move_squares(keysym) {
                     shift_number += 4;
                 }
                 let destination = i - shift_number + 4;
-                console.log(
-                    "i =", i,
-                    "destination =", destination,
-                    "current =", value_list[i],
-                    "destinationValue =", value_list[destination],
-                    "merged =", merged_squares[destination]
-                );
                 if (i - shift_number + 4 < 0) {
                     shift_number -= 4;
                 }
@@ -372,13 +383,19 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
+                // new stuff to try to fix problem
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                    destination = destination + 4
+                    value_list[destination] = value_list[i];
+                    value_list[i] = 0;
+                    randomnesss = true;
             }
         }
     }
     
         put_blocks();           
     if (randomnesss === true) {
-        // setTimeout(adding_new_square, 100);
+        setTimeout(adding_new_square, 100);
         let current_highest = check_highest_number();
         if (current_highest === 2048 && already_won === false) {
             setTimeout(you_win, 101);
