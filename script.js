@@ -353,8 +353,11 @@ function move_squares(keysym) {
                 }
                 let destination = i - shift_number + 4;
                 console.log(
-                    "Processing index", i,
-                    "value", value_list[i]
+                    "i =", i,
+                    "destination =", destination,
+                    "current =", value_list[i],
+                    "destinationValue =", value_list[destination],
+                    "merged =", merged_squares[destination]
                 );
                 if (i - shift_number + 4 < 0) {
                     shift_number -= 4;
