@@ -300,7 +300,7 @@ function move_squares(keysym) {
                 else {
                     console.log("NOTHING");
                 }
-
+            }
         }
     }
     
@@ -335,6 +335,7 @@ function move_squares(keysym) {
                     value_list[i] = 0;
                     randomnesss = true;
                 }
+            }        
         }
     }
     
@@ -369,6 +370,7 @@ function move_squares(keysym) {
                     value_list[i] = 0;
                     randomnesss = true;
                 }
+            }
         }
     }
     
@@ -403,6 +405,7 @@ function move_squares(keysym) {
                     value_list[i] = 0;
                     randomnesss = true;
                 }
+            }
         }
     }
     
