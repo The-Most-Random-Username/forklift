@@ -281,6 +281,12 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
+                // new stuff to try to fix problem
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                    destination = destination - 1
+                    value_list[destination] = value_list[i];
+                    value_list[i] = 0;
+                    randomnesss = true;
             }
         }
     }
@@ -309,6 +315,12 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
+                // new stuff to try to fix problem
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                    destination = destination + 1
+                    value_list[destination] = value_list[i];
+                    value_list[i] = 0;
+                    randomnesss = true;
             }
         }
     }
@@ -337,6 +349,12 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
+                // new stuff to try to fix problem
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                    destination = destination - 4
+                    value_list[destination] = value_list[i];
+                    value_list[i] = 0;
+                    randomnesss = true;
             }
         }
     }
@@ -365,6 +383,12 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
+                // new stuff to try to fix problem
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                    destination = destination + 4
+                    value_list[destination] = value_list[i];
+                    value_list[i] = 0;
+                    randomnesss = true;
             }
         }
     }
