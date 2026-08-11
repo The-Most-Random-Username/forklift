@@ -303,10 +303,10 @@ function move_squares(keysym) {
                     destination !== i &&
                     value_list[i] === value_list[destination] &&
                     merged_squares[destination] &&
-                    destination - 1 >= 0 &&
-                    value_list[destination - 1] === 0
+                    destination + 1 < 16 &&
+                    value_list[destination + 1] === 0
                 ) {
-                    destination = destination - 1;   // For Left
+                    destination = destination + 1;   // For Left
                     value_list[destination] = value_list[i];
                     value_list[i] = 0;
                     randomnesss = true;
@@ -353,10 +353,10 @@ function move_squares(keysym) {
                     destination !== i &&
                     value_list[i] === value_list[destination] &&
                     merged_squares[destination] &&
-                    destination + 1 < 16 &&
-                    value_list[destination + 1] === 0
+                    destination - 1 >= 0 &&
+                    value_list[destination - 1] === 0
                 ) {
-                    destination = destination + 1;   // For Left
+                    destination = destination - 1;   // For Left
 
                     value_list[destination] = value_list[i];
                     value_list[i] = 0;
