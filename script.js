@@ -268,13 +268,6 @@ function move_squares(keysym) {
                     moving_number++;
                 }
                 let destination = i - moving_number + 1;
-                console.log(
-                "i:", i,
-                "destination:", destination,
-                "value:", value_list[i],
-                "destValue:", value_list[destination],
-                "merged:", merged_squares[destination]
-            );
                 if (i - moving_number + 1 < 0) {
                     moving_number--;
                 }
@@ -282,13 +275,11 @@ function move_squares(keysym) {
                     value_list[destination] = value_list[i];
                     value_list[i] = 0;
                     randomnesss = true;
-                    console.log("SLIDE");
                 } else if (destination !== i && value_list[i] === value_list[destination] && !merged_squares[destination]) {
                     value_list[destination] = value_list[destination] * 2;
                     value_list[i] = 0;
                     merged_squares[destination] = true;
                     randomnesss = true;
-                    console.log("MERGE");
                 }
             }
         }
@@ -318,7 +309,7 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
-            }        
+            }
         }
     }
     
