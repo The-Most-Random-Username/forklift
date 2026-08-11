@@ -156,6 +156,7 @@ function put_blocks() {
             const tile = document.createElement('div');
             tile.classList.add('tile');
             tile.style.left = (position_list[i].x + 5) + 'px';
+            console.log("i =", i);
             tile.style.top = (position_list[i].y + 5) + 'px';
             
             let dark_or_light = (value_list[i] < 64) ? "#56534A" : "#F4EFEA";
@@ -268,6 +269,13 @@ function move_squares(keysym) {
                     moving_number++;
                 }
                 let destination = i - moving_number + 1;
+                console.log(
+                    "i =", i,
+                    "destination =", destination,
+                    "current =", value_list[i],
+                    "destinationValue =", value_list[destination],
+                    "merged =", merged_squares[destination]
+                );
                 if (i - moving_number + 1 < 0) {
                     moving_number--;
                 }
@@ -285,10 +293,9 @@ function move_squares(keysym) {
                 else if (
                     destination !== i &&
                     value_list[i] === value_list[destination] &&
-                    merged_squares[destination]
+                    merged_squares[destination] 
                 ) {
                     destination = destination - 1;   // For Left
-
                     value_list[destination] = value_list[i];
                     value_list[i] = 0;
                     randomnesss = true;
