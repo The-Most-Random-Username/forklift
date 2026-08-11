@@ -270,6 +270,15 @@ function move_squares(keysym) {
                 }
                 let destination = i - moving_number + 1;
                 console.log(
+                    "UP:",
+                    "i =", i,
+                    "moving_number =", moving_number,
+                    "destination =", destination,
+                    "current =", value_list[i],
+                    "destinationValue =", value_list[destination],
+                    "merged =", merged_squares[destination]
+                );
+                console.log(
                     "i =", i,
                     "destination =", destination,
                     "current =", value_list[i],
@@ -317,6 +326,15 @@ function move_squares(keysym) {
                     moving_number++;
                 }
                 let destination = i + moving_number - 1;
+                console.log(
+                    "DOWN:",
+                    "i =", i,
+                    "moving_number =", moving_number,
+                    "destination =", destination,
+                    "current =", value_list[i],
+                    "destinationValue =", value_list[destination],
+                    "merged =", merged_squares[destination]
+                );
                 if (i + moving_number - 1 > value_list.length) {
                     moving_number--;
                 }
@@ -401,13 +419,6 @@ function move_squares(keysym) {
                     shift_number += 4;
                 }
                 let destination = i - shift_number + 4;
-                console.log(
-                    "i =", i,
-                    "destination =", destination,
-                    "current =", value_list[i],
-                    "destinationValue =", value_list[destination],
-                    "merged =", merged_squares[destination]
-                );
                 if (i - shift_number + 4 < 0) {
                     shift_number -= 4;
                 }
