@@ -268,6 +268,13 @@ function move_squares(keysym) {
                     moving_number++;
                 }
                 let destination = i - moving_number + 1;
+                console.log(
+                "i:", i,
+                "destination:", destination,
+                "value:", value_list[i],
+                "destValue:", value_list[destination],
+                "merged:", merged_squares[destination]
+            );
                 if (i - moving_number + 1 < 0) {
                     moving_number--;
                 }
@@ -281,13 +288,6 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
-                // new stuff to try to fix problem
-                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
-                    destination = destination - 1
-                    value_list[destination] = value_list[i];
-                    value_list[i] = 0;
-                    randomnesss = true;
-            }
         }
     }
     
@@ -315,13 +315,6 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
-                // new stuff to try to fix problem
-                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
-                    destination = destination + 1
-                    value_list[destination] = value_list[i];
-                    value_list[i] = 0;
-                    randomnesss = true;
-            }
         }
     }
     
@@ -349,13 +342,6 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
-                // new stuff to try to fix problem
-                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
-                    destination = destination - 4
-                    value_list[destination] = value_list[i];
-                    value_list[i] = 0;
-                    randomnesss = true;
-            }
         }
     }
     
@@ -383,13 +369,6 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
-                // new stuff to try to fix problem
-                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
-                    destination = destination + 4
-                    value_list[destination] = value_list[i];
-                    value_list[i] = 0;
-                    randomnesss = true;
-            }
         }
     }
     
