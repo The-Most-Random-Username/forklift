@@ -291,7 +291,7 @@ function move_squares(keysym) {
                     console.log("MERGE");
                 }
                 // new stuff to try to fix problem
-                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_squares[destination]) {
                     destination = destination - 1
                     value_list[destination] = value_list[i];
                     value_list[i] = 0;
@@ -329,7 +329,7 @@ function move_squares(keysym) {
                     randomnesss = true;
                 }
                 // new stuff to try to fix problem
-                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_squares[destination]) {
                     destination = destination + 1
                     value_list[destination] = value_list[i];
                     value_list[i] = 0;
@@ -363,7 +363,7 @@ function move_squares(keysym) {
                     randomnesss = true;
                 }
                 // new stuff to try to fix problem
-                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_squares[destination]) {
                     destination = destination - 4
                     value_list[destination] = value_list[i];
                     value_list[i] = 0;
@@ -397,7 +397,7 @@ function move_squares(keysym) {
                     randomnesss = true;
                 }
                 // new stuff to try to fix problem
-                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_squares[destination]) {
                     destination = destination + 4
                     value_list[destination] = value_list[i];
                     value_list[i] = 0;
