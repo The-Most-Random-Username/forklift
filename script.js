@@ -5,8 +5,7 @@ let start_x = 0;
 let start_y = 0;
 let already_won = false;
 let swipe_direction = 0;
-let value_list = Array(2, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 8, 0, 0, 0
-)
+let value_list = Array(2, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 8, 0, 0, 0);
 let spot_click = 0;
 let isTypingGameActive = false; // Add this with your other globals
 const position_list = [
