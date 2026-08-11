@@ -352,14 +352,7 @@ function move_squares(keysym) {
                     shift_number += 4;
                 }
                 let destination = i - shift_number + 4;
-                console.log( 
-                    "LEFT:",
-                    "i =", i,
-                    "destination =", destination,
-                    "current =", value_list[i],
-                    "destinationValue =", value_list[destination],
-                    "merged =", merged_squares[destination]
-                );
+                console.log("LEFT SECTION", i, destination);
                 if (i - shift_number + 4 < 0) {
                     shift_number -= 4;
                 }
