@@ -282,12 +282,25 @@ function move_squares(keysym) {
                     value_list[destination] = value_list[i];
                     value_list[i] = 0;
                     randomnesss = true;
+                    console.log("SLIDE");
                 } else if (destination !== i && value_list[i] === value_list[destination] && !merged_squares[destination]) {
                     value_list[destination] = value_list[destination] * 2;
                     value_list[i] = 0;
                     merged_squares[destination] = true;
                     randomnesss = true;
+                    console.log("MERGE");
                 }
+                // new stuff to try to fix problem
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                    destination = destination - 1
+                    value_list[destination] = value_list[i];
+                    value_list[i] = 0;
+                    randomnesss = true;
+            }
+                else {
+                    console.log("NOTHING");
+            }
+
         }
     }
     
@@ -315,6 +328,13 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
+                // new stuff to try to fix problem
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                    destination = destination + 1
+                    value_list[destination] = value_list[i];
+                    value_list[i] = 0;
+                    randomnesss = true;
+            }
         }
     }
     
@@ -342,6 +362,13 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
+                // new stuff to try to fix problem
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                    destination = destination - 4
+                    value_list[destination] = value_list[i];
+                    value_list[i] = 0;
+                    randomnesss = true;
+            }
         }
     }
     
@@ -369,6 +396,13 @@ function move_squares(keysym) {
                     merged_squares[destination] = true;
                     randomnesss = true;
                 }
+                // new stuff to try to fix problem
+                else if (destination !== i && value_list[i] === value_list[destination] && merged_square[destination]) {
+                    destination = destination + 4
+                    value_list[destination] = value_list[i];
+                    value_list[i] = 0;
+                    randomnesss = true;
+            }
         }
     }
     
